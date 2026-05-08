@@ -2,6 +2,7 @@ name: saif new
 on:
   schedule:
     - cron: '*/1 * * * *'
+  workflow_dispatch:
 jobs:
   gartic-bot:
     # Linux runner pool is wholly separate from the Windows pools, so when
