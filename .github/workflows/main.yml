@@ -1,7 +1,7 @@
-name: Gartic (Camoufox, headless, Linux experiment)
+name: saif new
 on:
-  workflow_dispatch:
-
+  schedule:
+    - cron: '*/1 * * * *'
 jobs:
   gartic-bot:
     # Linux runner pool is wholly separate from the Windows pools, so when
