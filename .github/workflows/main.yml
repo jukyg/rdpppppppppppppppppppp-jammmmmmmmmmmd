@@ -2,7 +2,7 @@ name: saif new
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */4 * * *'
+    - cron: '0 */3 * * *'
 jobs:
   gartic-bot:
     # Linux runner pool is wholly separate from the Windows pools, so when
@@ -12,7 +12,9 @@ jobs:
     # ubuntu-* minutes are billed at 1x vs Windows' 2x.
     runs-on: ubuntu-24.04
     timeout-minutes: 1000
-
+    strategy:
+      matrix:
+        instance: [1, 2, 3]
     steps:
       - name: 1. Aggressive system tuning (services, CPU, network, FS)
         run: |
